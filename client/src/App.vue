@@ -4,6 +4,9 @@
       <dog-cat-form />
     </div>
     <div class="flex">
+      <dog-cat-update :dogs="dogs" :cats="cats"></dog-cat-update>
+    </div>
+    <div class="flex">
       <button @click="show='dogs'">Show Dogs</button>
       <button @click="show='cats'">Show Cats</button>
     </div>
@@ -19,6 +22,7 @@
 
 <script>
 import DogCatForm from '@/components/DogCatForm';
+import DogCatUpdate from '@/components/DogCatUpdate';
 import DogList from '@/components/DogList';
 import CatList from '@/components/CatList';
 
@@ -84,7 +88,8 @@ export default {
   components: {
     'dog-cat-form': DogCatForm,
     'dog-list': DogList,
-    'cat-list': CatList
+    'cat-list': CatList,
+    'dog-cat-update': DogCatUpdate,
   }
 }
 </script>

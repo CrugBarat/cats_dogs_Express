@@ -64,6 +64,7 @@ export default {
 	background: #f4f7f8;
 	border-radius: 8px;
 	font-family: Georgia, "Times New Roman", Times, serif;
+	cursor: url('../assets/paw.png'), auto;
 }
 .dog-cat-form fieldset{
 	border: none;
@@ -75,6 +76,7 @@ export default {
 .dog-cat-form label {
 	display: block;
 	margin-bottom: 8px;
+	cursor: url('../assets/paw.png'), auto;
 }
 .dog-cat-form input[type="text"],
 .dog-cat-form select {
@@ -94,14 +96,17 @@ export default {
 	color:#8a97a0;
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	cursor: url('../assets/paw.png'), auto;
 }
 .dog-cat-form input[type="text"]:focus,
 .dog-cat-form select:focus{
 	background: #d2d9dd;
+	cursor: url('../assets/paw.png'), auto;
 }
 .dog-cat-form select{
 	-webkit-appearance: menulist-button;
 	height:35px;
+	cursor: url('../assets/paw.png'), auto;
 }
 
 .dog-cat-form input[type="button"]

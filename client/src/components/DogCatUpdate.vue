@@ -4,22 +4,6 @@
 <form>
 <fieldset>
 <legend> Update an animal!</legend>
-<legend> Dogs:</legend>
-<select name="dog" v-model="dog">
-	<option value="" disabled>Dogs</option>
-	<option v-for="dog in dogs" :value="dog">{{dog.name}}</option>
-</select>
-<legend> Cats:</legend>
-<select name="cat" v-model="cat">
-	<option value="" disabled>Cats</option>
-	<option v-for="cat in cats" :value="cat">{{cat.name}}</option>
-</select>
-<legend> New Details:</legend>
-<label for="name">Name:</label>
-<input type="text" name="name" v-model="name" />
-
-<label for="breed">Breed:</label>
-<input type="text" name="breed" v-model="breed" />
 
 <label for="type">Type</label>
 <select name="type" v-model="type">
@@ -27,8 +11,21 @@
 	<option value="dogs">Dog</option>
 	<option value="cats">Cat</option>
 </select>
+
+<label for="animalName">Animal</label>
+<select name="animalName" v-model="animalName">
+	<option v-for="animal in getAnimals" :value="animal">{{animal.name}}</option>
+</select>
+
+<legend> New Details:</legend>
+<label for="name">Name:</label>
+<input type="text" name="name" v-model="name" />
+<label for="breed">Breed:</label>
+<input type="text" name="breed" v-model="breed" />
 </fieldset>
+
 <input type="button" @click="handleUpdate" value="Update"/>
+
 </form>
 </div>
 </template>
@@ -43,8 +40,7 @@ export default {
 			name: "",
 			breed: "",
 			type: "",
-			cat: "",
-			dog: ""
+			animalName: ""
 		}
 	},
 	methods: {
@@ -68,9 +64,18 @@ export default {
 
 		getAnimalIndex() {
 			if (this.type === 'cats') {
-				return this.cats.indexOf(this.cat)
+				return this.cats.indexOf(this.animalName)
 			} else {
-				return this.dogs.indexOf(this.dog)
+				return this.dogs.indexOf(this.animalName)
+			}
+		}
+	},
+	computed: {
+		getAnimals() {
+			if (this.type === 'cats') {
+					return this.cats
+			} else {
+				return this.dogs
 			}
 		}
 	}

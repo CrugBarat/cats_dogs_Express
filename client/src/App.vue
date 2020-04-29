@@ -1,10 +1,10 @@
 <template>
   <div id="app">
+    <div class="forms-containers">
     <div class="flex">
-      <dog-cat-form />
-    </div>
-    <div class="flex">
+      <dog-cat-form></dog-cat-form>
       <dog-cat-update :dogs="dogs" :cats="cats"></dog-cat-update>
+    </div>
     </div>
     <div class="flex">
       <button @click="show='dogs'">Show Dogs</button>
@@ -95,6 +95,16 @@ export default {
 </script>
 
 <style>
+
+.forms-container {
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex {
+  border-style: solid;
+}
 
 .flex-row {
   justify-content: space-between;

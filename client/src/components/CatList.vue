@@ -1,7 +1,7 @@
 <template lang="html">
 	<div id="cat-list">
 		<div class="flex">
-			<h2>All the kitties!</h2>
+			<h2>Cats:</h2>
 
 		</div>
 		<ul class="cards">

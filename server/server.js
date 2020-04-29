@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const createRouter = require('./helpers/create_router.js');
 
 const dogs = [
               {name: "Fluffy", breed: "Pomeranian"},
@@ -17,10 +18,15 @@ const cats = [
               { name: "Socks", breed: "British Shorthair" },
               { name: "Mr Bigglesworth", breed: "Persian" },
               { name: "Monty", breed: "Maine Coon" }
-            ];            
+            ];
+
+const dogsRouter = createRouter(dogs);
+const catsRouter = createRouter(cats);
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/api/dogs', dogsRouter);
+app.use('/api/cats', catsRouter);
 
 app.listen(3000, function() {
   console.log(`App is running on port ${this.address().port}`);

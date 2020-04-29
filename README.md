@@ -1,12 +1,14 @@
 # Cats & Dogs
 
-A Cats & Dogs app, which uses a client/server relationship:
+A Cats & Dogs app built using the following:
 
 **Programming Language**: JavaScript
 
 **Front-end Web Framework**: Vue
 
 **Back-end Web Framework**: Express
+
+**API Client**: Insomnia
 
 **Middleware**: Body Parser
 
@@ -20,7 +22,7 @@ This exercise was tasked to me by CodeClan, Glasgow where I studied towards a PD
 
 # Brief
 
-You have been asked to build an api to hold information about dogs.
+You have been asked to build an API to hold information about dogs.
 
 This should be a RESTful API and should include the following routes:
 
@@ -56,13 +58,13 @@ This should be a RESTful API and should include the following routes:
 npm install
 ```
 
-- In the client directory, in Terminal:
+- In client directory, in Terminal:
 
 ```
 npm run serve
 ```
 
-- In the server directory, in Terminal:
+- In server directory, in Terminal:
 
 ```
 npm run server:dev

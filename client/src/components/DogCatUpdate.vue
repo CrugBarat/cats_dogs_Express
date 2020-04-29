@@ -1,37 +1,37 @@
 <template lang="html">
+	<div class="dog-cat-form">
+		<form>
+			<fieldset>
+				<legend> Update an animal!</legend>
 
-<div class="dog-cat-form">
-<form>
-<fieldset>
-<legend> Update an animal!</legend>
+				<label for="type">Type</label>
+				<select name="type" v-model="type">
+					<option value="" disabled>Choose...</option>
+					<option value="dogs">Dog</option>
+					<option value="cats">Cat</option>
+				</select>
 
-<label for="type">Type</label>
-<select name="type" v-model="type">
-	<option value="" disabled>Choose...</option>
-	<option value="dogs">Dog</option>
-	<option value="cats">Cat</option>
-</select>
+				<label for="animalName">Animal</label>
+				<select name="animalName" v-model="animalName">
+					<option v-for="animal in getAnimals" :value="animal">{{animal.name}}</option>
+				</select>
 
-<label for="animalName">Animal</label>
-<select name="animalName" v-model="animalName">
-	<option v-for="animal in getAnimals" :value="animal">{{animal.name}}</option>
-</select>
+				<legend> New Details:</legend>
+				<label for="name">Name:</label>
+				<input type="text" name="name" v-model="name" />
+				<label for="breed">Breed:</label>
+				<input type="text" name="breed" v-model="breed" />
+			</fieldset>
 
-<legend> New Details:</legend>
-<label for="name">Name:</label>
-<input type="text" name="name" v-model="name" />
-<label for="breed">Breed:</label>
-<input type="text" name="breed" v-model="breed" />
-</fieldset>
+			<input type="button" @click="handleUpdate" value="Update"/>
 
-<input type="button" @click="handleUpdate" value="Update"/>
-
-</form>
-</div>
+		</form>
+	</div>
 </template>
 
 <script>
 import { eventBus } from '../main';
+
 export default {
 	name: "dog-cat-update",
 	props: ['dogs', 'cats'],
@@ -73,7 +73,7 @@ export default {
 	computed: {
 		getAnimals() {
 			if (this.type === 'cats') {
-					return this.cats
+				return this.cats
 			} else {
 				return this.dogs
 			}
@@ -93,18 +93,22 @@ export default {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	cursor: url('../assets/paw.png'), auto;
 }
+
 .dog-cat-form fieldset{
 	border: none;
 }
+
 .dog-cat-form legend {
 	font-size: 1.4em;
 	margin-bottom: 10px;
 }
+
 .dog-cat-form label {
 	display: block;
 	margin-bottom: 8px;
 	cursor: url('../assets/paw.png'), auto;
 }
+
 .dog-cat-form input[type="text"],
 .dog-cat-form select {
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -125,11 +129,13 @@ export default {
 	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 	cursor: url('../assets/paw.png'), auto;
 }
+
 .dog-cat-form input[type="text"]:focus,
 .dog-cat-form select:focus{
 	background: #d2d9dd;
 	cursor: url('../assets/paw.png'), auto;
 }
+
 .dog-cat-form select{
 	-webkit-appearance: menulist-button;
 	height:35px;
@@ -150,6 +156,7 @@ export default {
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
+
 .dog-cat-form input[type="submit"]:hover,
 .dog-cat-form input[type="button"]:hover
 {

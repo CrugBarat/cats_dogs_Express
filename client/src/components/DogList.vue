@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 import DogItem from './DogItem.vue';
 
 export default {

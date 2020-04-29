@@ -6,17 +6,16 @@
       <dog-cat-update :dogs="dogs" :cats="cats"></dog-cat-update>
     </div>
     </div>
+
     <div class="flex">
       <button @click="show='dogs'">Show Dogs</button>
       <button @click="show='cats'">Show Cats</button>
     </div>
 
     <div class="flex container">
-
         <dog-list v-if="show === 'dogs'" :dogs="dogs" />
         <cat-list v-if="show === 'cats'" :cats="cats" />
     </div>
-
   </div>
 </template>
 
@@ -95,7 +94,6 @@ export default {
 </script>
 
 <style>
-
 body {
     cursor: url('./assets/paw.png'), auto;
 }

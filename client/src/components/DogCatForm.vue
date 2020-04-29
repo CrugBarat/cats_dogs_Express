@@ -110,18 +110,19 @@ export default {
 	padding: 19px 39px 18px 39px;
 	color: #FFF;
 	margin: 0 auto;
-	background: #1abc9c;
+	background: 	#be29ec;
 	font-size: 18px;
 	text-align: center;
 	font-style: normal;
 	width: 75%;
-	border: 1px solid #16a085;
+	border: 1px solid 	#be29ec;
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
 .dog-cat-form input[type="submit"]:hover,
 .dog-cat-form input[type="button"]:hover
 {
-	background: #109177;
+	background: #d896ff;
+	cursor: url('../assets/paw.png'), auto;
 }
 </style>

@@ -96,14 +96,13 @@ export default {
 
 <style>
 
-.forms-container {
-  border-style: solid;
-  display: flex;
-  flex-direction: row;
+body {
+    cursor: url('./assets/paw.png'), auto;
 }
 
-.flex {
-  border-style: solid;
+.forms-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .flex-row {
@@ -125,8 +124,9 @@ button {
 
 button:hover {
   color: #ffffff !important;
-  background: #1abc9c;
-  border-color: #1abc9c !important;
+  background: #be29ec;
+  border-color: #be29ec !important;
   transition: all 0.4s ease 0s;
+  cursor: url('./assets/paw.png'), auto;
 }
 </style>

@@ -22,7 +22,7 @@ import DogCatForm from '@/components/DogCatForm';
 import DogList from '@/components/DogList';
 import CatList from '@/components/CatList';
 
-import { eventBus } from './main';
+import {eventBus} from './main';
 
 export default {
   name: 'app',
@@ -42,7 +42,23 @@ export default {
       fetch("http://localhost:3000/api/cats")
       .then(response => response.json())
       .then(cats => this.cats = cats);
-    }
+    },
+
+    getCatIndex(cat) {
+      return this.cats.indexOf(cat)
+    },
+
+    getDogIndex(dog) {
+      return this.dogs.indexOf(dog)
+    },
+
+    handleDelete(type, id){
+			const url = `http://localhost:3000/api/${type}/${id}`;
+
+			fetch(url, {
+				method: 'DELETE'
+			}).then(res => res.json())
+		}
   },
   mounted() {
     this.fetchData();
@@ -50,6 +66,18 @@ export default {
     eventBus.$on("refresh-data", (type) => {
       console.log(type);
       this.show = type;
+      this.fetchData()
+    });
+
+    eventBus.$on("remove-cat", (cat) => {
+      const id = this.getCatIndex(cat)
+      this.handleDelete('cats', id);
+      this.fetchData()
+    });
+
+    eventBus.$on("remove-dog", (dog) => {
+      const id = this.getDogIndex(dog)
+      this.handleDelete('dogs', id);
       this.fetchData()
     });
   },

@@ -14,7 +14,7 @@ A Cats & Dogs app built using the following:
 
 **Markup/Styling**: HTML5/CSS3
 
-The Cats & Dogs app accesses a HTTP RESTful API, which is available on a server created using Express. The app can add a new cat/dog using RESTful routes. The RESTful routes used are: index, create, show, update and destroy, using the HTTP verbs GET, POST, PUT, DELETE.
+The Cats & Dogs app accesses a HTTP RESTful API, which is available on a server created using Express. The app can add a new cat/dog, delete a specific cat/dog or update an existing cat/dog, using RESTful routes. The RESTful routes used are: index, create, show, update and destroy, using the HTTP verbs GET, POST, PUT, DELETE.
 
 This exercise was tasked to me by CodeClan, Glasgow where I studied towards a PDA Level 8 in Professional Software Development. The exercise brief can be found below.
 
